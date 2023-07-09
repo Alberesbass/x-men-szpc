@@ -25,8 +25,8 @@ const personagens = document.querySelectorAll('.personagem');
 personagens.forEach((personagem) => {
   personagem.addEventListener('mouseenter', () => {
     //evitar problemas em tela pequena de celular
-    if(window.innerWidth < 450){
-      window.scrollTo({top: 0, behavior: 'smooth'});
+    if (window.innerWidth < 450) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     // passo 3 - verificar se já exista um personagem selecionado, se sim, devemos remover a seleção dele 
@@ -35,7 +35,7 @@ personagens.forEach((personagem) => {
     personagem.classList.add('selecionado');
 
     // OBJETIVO 2 - quando passar o mouse em cima do personagem na listagem, trocar a imagem, o nome e a descrição do personagem grande
-    
+
     // passo 1 - pegar o elemento do personagem grande pra adicionar as informações nele
     alterarImagemPersonagemSelecionado(personagem);
 
@@ -44,8 +44,8 @@ personagens.forEach((personagem) => {
 
     // passo 4 - alterar a descrição do personagem grande
     alterarDescricaoPersonagem(personagem);
-  })
-})
+  });
+});
 function alterarDescricaoPersonagem(personagem) {
   const descricaoPersonagem = document.getElementById('descricao-personagem');
   descricaoPersonagem.innerText = personagem.getAttribute('data-description');
